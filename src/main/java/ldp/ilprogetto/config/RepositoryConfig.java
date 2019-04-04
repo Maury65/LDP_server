@@ -6,6 +6,7 @@ import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurerAdapt
 
 import ldp.ilprogetto.entita.Proj;
 
+@SuppressWarnings("deprecation")
 @Configuration
 public class RepositoryConfig  extends RepositoryRestConfigurerAdapter {
 

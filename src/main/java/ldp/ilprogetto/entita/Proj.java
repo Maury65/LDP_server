@@ -2,8 +2,10 @@ package ldp.ilprogetto.entita;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -13,83 +15,128 @@ public class Proj {
 
 	
 	    @Id
-	    @GeneratedValue
-	    private Long id;
-	    private String c_proj;
-	    private String d_proj;
-	    private String nome_pm;
-	    private Integer effort;
-	    private Date d_inizio;
-	    private Date d_fine;
+	    @GeneratedValue(strategy=GenerationType.AUTO)
+		private Long id;
+		
+		@Column(name = "c_proj")
+		private String codProgetto;
+		
+		@Column(name = "d_proj")
+	    private String descProgetto;
+		
+		@Column(name = "nome_pm")
+	    private String nomePM;
+		
+		private Integer effort;
+
+	    @Column(name = "d_inizio")
+		private Date dataInizio;
+		
+		@Column(name = "d_fine")
+	    private Date dataFine;
 	   
 
 	    public Proj() {
 	    }
-	    
 
-	    public Proj(Long id, String c_proj, String d_proj, String nome_pm, Integer effort,
-	    		Date d_inizio, Date d_fine) 
-	    		{
-	        this.id = id;
-	        this.c_proj = c_proj;
-	        this.d_proj = d_proj;
-	        this.nome_pm = nome_pm;
-	        this.effort = effort;
-	        this.d_inizio = d_inizio;
-	        this.d_fine = d_fine;
-	        
-	    }
+		/**
+		 * @return the id
+		 */
+		public Long getId() {
+			return id;
+		}
 
-	    public Long getId() {
-	        return id;
-	    }
+		/**
+		 * @param id the id to set
+		 */
+		public void setId(Long id) {
+			this.id = id;
+		}
 
-	    public void setId(Long id) {
-	        this.id = id;
-	    }
+		/**
+		 * @return the codProgetto
+		 */
+		public String getCodProgetto() {
+			return codProgetto;
+		}
 
-	    public String getC_proj() {
-	        return c_proj;
-	    }
+		/**
+		 * @param codProgetto the codProgetto to set
+		 */
+		public void setCodProgetto(String codProgetto) {
+			this.codProgetto = codProgetto;
+		}
 
-	    public void setC_proj(String firstName) {
-	        this.c_proj = firstName;
-	    }
+		/**
+		 * @return the descProgetto
+		 */
+		public String getDescProgetto() {
+			return descProgetto;
+		}
 
-	    public String getD_proj() {
-	        return d_proj;
-	    }
+		/**
+		 * @param descProgetto the descProgetto to set
+		 */
+		public void setDescProgetto(String descProgetto) {
+			this.descProgetto = descProgetto;
+		}
 
-	    public void setDproj(String lastName) {
-	        this.d_proj = lastName;
-	    }
+		/**
+		 * @return the nomePM
+		 */
+		public String getNomePM() {
+			return nomePM;
+		}
 
-	    public String getNome_pm() {
-	        return nome_pm;
-	    }
+		/**
+		 * @param nomePM the nomePM to set
+		 */
+		public void setNomePM(String nomePM) {
+			this.nomePM = nomePM;
+		}
 
-	    public void setNome_pm(String team) {
-	        this.nome_pm = team;
-	    }
+		/**
+		 * @return the effort
+		 */
+		public Integer getEffort() {
+			return effort;
+		}
 
-	    public Integer getEffort() {
-	        return effort;
-	    }
+		/**
+		 * @param effort the effort to set
+		 */
+		public void setEffort(Integer effort) {
+			this.effort = effort;
+		}
 
-	    public void setEffort(Integer effort) {
-	        this.effort = effort;
-	    }
-	    public Date getD_inizio() {
-	        return d_inizio;
-	    }
+		/**
+		 * @return the dataInizio
+		 */
+		public Date getDataInizio() {
+			return dataInizio;
+		}
 
-	    public void setD_inizio(Date d_inizio) {
-	        this.d_inizio = d_inizio;
-	    }
-	    public Date getD_fine() {
-	        return d_fine;
-	    }
-	    public void setD_fine(Date d_fine) {
-	        this.d_fine = d_fine;
-	    }
+		/**
+		 * @param dataInizio the dataInizio to set
+		 */
+		public void setDataInizio(Date dataInizio) {
+			this.dataInizio = dataInizio;
+		}
+
+		/**
+		 * @return the dataFine
+		 */
+		public Date getDataFine() {
+			return dataFine;
+		}
+
+		/**
+		 * @param dataFine the dataFine to set
+		 */
+		public void setDataFine(Date dataFine) {
+			this.dataFine = dataFine;
+		}
+			
+		
+		
 	}
